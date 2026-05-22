@@ -17,7 +17,12 @@
     "lint": "npm run typecheck",
     "ci:install": "npm install --ignore-scripts",
     "test": "npm run test -w @mdwrk/mdwrkcom-content-pack",
-    "ci": "npm run build && npm run typecheck && npm run test"
+    "pack:packages": "node ./tools/release/pack-workspaces.mjs",
+    "publish:packages": "node ./tools/release/run-publish.mjs",
+    "ci:publish-packages": "node ./tools/release/verify-publish-packages.mjs",
+    "release:status": "npx @changesets/cli status",
+    "release:version": "npx @changesets/cli version",
+    "ci": "npm run build && npm run typecheck && npm run test && npm run ci:publish-packages -- --plan"
   },
   "devDependencies": {
     "typescript": "5.9.3"
