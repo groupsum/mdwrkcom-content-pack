@@ -87,7 +87,7 @@ export async function runPublish() {
     }));
 
   const mode = publishMode();
-  const hasAuthToken = Boolean(process.env.NPM_TOKEN || process.env.NODE_AUTH_TOKEN);
+  const hasAuthToken = Boolean(process.env.NPM_API_TOKEN || process.env.NPM_TOKEN || process.env.NODE_AUTH_TOKEN);
   const shouldAttemptPublish = mode !== 'ci-disabled' && hasAuthToken;
 
   const report = {
