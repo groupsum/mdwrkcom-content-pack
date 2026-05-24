@@ -22,3 +22,4 @@ npm run test
 - Reusable page/site generation packages belong in `mdwrk-pages`.
 - The deployable public site host belongs in `mdwrk-com`.
 - This repo owns only the first-party mdwrk.com content-pack source.
+- Theme, editor, renderer, preview, and shell token contracts are implemented upstream; this repo should consume them rather than redefining them.
