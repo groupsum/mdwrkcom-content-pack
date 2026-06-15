@@ -1,5 +1,5 @@
 {
-  "name": "mdwrkcom",
+  "name": "mdwrkcom-content-pack",
   "private": true,
   "version": "0.1.0",
   "packageManager": "pnpm@10.11.0",
@@ -31,10 +31,10 @@
   "homepage": "https://mdwrk.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/groupsum/mdwrkcom.git"
+    "url": "https://github.com/groupsum/mdwrkcom-content-pack.git"
   },
   "bugs": {
-    "url": "https://github.com/groupsum/mdwrkcom/issues"
+    "url": "https://github.com/groupsum/mdwrkcom-content-pack/issues"
   },
   "license": "Apache-2.0",
   "author": "Jacob Stewart <jacob@swarmauri.com>",

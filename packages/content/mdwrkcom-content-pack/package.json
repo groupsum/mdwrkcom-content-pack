@@ -59,10 +59,10 @@
   "homepage": "https://mdwrk.com",
   "repository": {
     "type": "git",
-    "url": "https://github.com/groupsum/mdwrkcom.git",
+    "url": "https://github.com/groupsum/mdwrkcom-content-pack.git",
     "directory": "packages/content/mdwrkcom-content-pack"
   },
   "bugs": {
-    "url": "https://github.com/groupsum/mdwrkcom/issues"
+    "url": "https://github.com/groupsum/mdwrkcom-content-pack/issues"
   }
 }

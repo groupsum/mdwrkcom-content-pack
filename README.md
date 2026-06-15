@@ -1,6 +1,6 @@
-# mdwrkcom
+# mdwrkcom-content-pack
 
-The `mdwrkcom` repo is the source-of-truth home for `@mdwrk/mdwrkcom-content-pack`.
+The `mdwrkcom-content-pack` repo is the source-of-truth home for `@mdwrk/mdwrkcom-content-pack`.
 
 It owns the mdwrk.com first-party content tree, markdown data, packaged public assets, and generated discovery artifacts. The deployable site host lives separately in `mdwrk-com`.
 
