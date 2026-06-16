@@ -49,7 +49,7 @@ jobs:
           node-version: "20"
           package-directory: ${{ inputs.package_directory }}
           install-directory: "."
-          cache-dependency-path: "package-lock.json"
+          cache-dependency-path: "package.json"
           npm-token: ${{ secrets.NPM_API_TOKEN }}
           install-command: ${{ inputs.install_command }}
           build-command: ${{ inputs.build_command }}
