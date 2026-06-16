@@ -1,0 +1,60 @@
+name: Publish Package
+
+on:
+  workflow_dispatch:
+    inputs:
+      package_directory:
+        description: "Directory containing the package.json to publish"
+        required: true
+        default: "packages/content/mdwrkcom-content-pack"
+        type: string
+      install_command:
+        description: "Repository install command"
+        required: false
+        default: "npm run ci:install"
+        type: string
+      build_command:
+        description: "Repository build command"
+        required: false
+        default: "npm run build"
+        type: string
+      test_command:
+        description: "Optional repository test command"
+        required: false
+        default: ""
+        type: string
+      dry_run:
+        description: "Run npm publish with --dry-run"
+        required: false
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+  id-token: write
+
+concurrency:
+  group: publish-package-${{ github.ref }}-${{ inputs.package_directory }}
+  cancel-in-progress: false
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publish package
+        uses: cobycloud/actions/actions/npm-publish@main
+        with:
+          node-version: "20"
+          package-directory: ${{ inputs.package_directory }}
+          install-directory: "."
+          cache-dependency-path: "package-lock.json"
+          npm-token: ${{ secrets.NPM_API_TOKEN }}
+          install-command: ${{ inputs.install_command }}
+          build-command: ${{ inputs.build_command }}
+          test-command: ${{ inputs.test_command }}
+          scope: "@mdwrk"
+          access: public
+          provenance: "true"
+          dry-run: ${{ inputs.dry_run }}
