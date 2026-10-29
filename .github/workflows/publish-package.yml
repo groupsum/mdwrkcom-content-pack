@@ -47,7 +47,7 @@ jobs:
         uses: cobycloud/actions/actions/npm-publish@main
         with:
           publish-mode: trusted
-          node-version: "20"
+          node-version: "24"
           package-directory: ${{ inputs.package_directory }}
           install-directory: "."
           cache-dependency-path: "package.json"
