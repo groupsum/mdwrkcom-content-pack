@@ -46,11 +46,11 @@ jobs:
       - name: Publish package
         uses: cobycloud/actions/actions/npm-publish@main
         with:
+          publish-mode: trusted
           node-version: "20"
           package-directory: ${{ inputs.package_directory }}
           install-directory: "."
           cache-dependency-path: "package.json"
-          npm-api-token: ${{ secrets.NPM_API_TOKEN }}
           install-command: ${{ inputs.install_command }}
           build-command: ${{ inputs.build_command }}
           test-command: ${{ inputs.test_command }}
